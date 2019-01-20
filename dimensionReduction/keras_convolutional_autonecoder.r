@@ -53,7 +53,7 @@ CAE %>% fit(
 input_layer <- 
   layer_input(shape = input_dim) 
 
-encoderv<-
+encoder<-
 layer_input %>%
 layer_conv_2d(filters = 16, kernel_size = c(3,3), activation = 'relu',padding='same')%>% 
 layer_max_pooling_2d(pool_size = c(2, 2),padding='same')%>% 
