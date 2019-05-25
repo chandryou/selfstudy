@@ -367,3 +367,7 @@ preds <- data.frame(
         sqrt(epistemic_uncertainty) + 
         sqrt(aleatoric_uncertainty)
 )
+
+ggplot(df, aes(x, y_pred)) + 
+    geom_point() + 
+    geom_ribbon(aes(ymin = e_u_lower, ymax = e_u_upper), alpha = 0.3)
