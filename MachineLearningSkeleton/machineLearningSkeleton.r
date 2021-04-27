@@ -50,8 +50,8 @@ getDoParWorkers()
 ##########################################################################################################
 ####Helper functions####
 ##Normalization of the elements in the data
-minmaxNormalize <- function(x) {return ((x-min(x)) / (max(x)-min(x)))}
-zNormalize <- function(x) {return ( (x-mean(x))/sd(x)  )}
+minmaxNormalize <- function(x) {return ((x-min(x,na.rm = T)) / (max(x,na.rm = T)-min(x,na.rm = T)))}
+zNormalize <- function(x) {return ( (x-mean(x,na.rm = T))/sd(x,na.rm = T))}
 ##########################################################################################################
 
 ####Data load and preprocessing####
