@@ -209,7 +209,7 @@ sigmas<-c()
 
 for (i in seq(length(muMatrix))){
     out_mu <- mean(muMatrix[,i])
-    out_sigma <-sqrt(mean(sigmaMatrix[,i]+sqrt(muMatrix[,i])) - sqrt(out_mu) )
+    out_sigma <-sqrt(mean(sigmaMatrix[,i]+(muMatrix[,i])^2, na.rm=T) - (out_mu)^2 )
     preds<-append(preds,out_mu)
     sigmas<-append(sigmas,out_sigma)
 }
